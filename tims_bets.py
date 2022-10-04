@@ -112,10 +112,9 @@ crux = datetime.time(11,56,0)
 
 mass_end = datetime.time(13,00,0)
 
-if 'time' not in st.session_state:
-    st.session_state.time = time
 
-if st.session_state.time < crux:
+
+if time < crux:
 
     
     st.text("Simply input your name! Select your bets from the drop down menus! Then hit submit!")
@@ -203,7 +202,7 @@ if st.session_state.time < crux:
 
 
 
-elif st.session_state.time > crux and st.session_state.time < mass_end:
+elif time > crux and time < mass_end:
 
     st.subheader('The time for betting is over! The bets are placed! Time to witness this beautiful Sacrament of Marriage, head over to the livestream!')
     st.subheader('Livestream Link:')
