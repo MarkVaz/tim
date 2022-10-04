@@ -108,9 +108,9 @@ st.title("Welcome to Tim and Adeline's Wedding Bets!")
 
 time = datetime.datetime.now().time()
 
-crux = datetime.time(11,56,0)
+crux = datetime.time(18,56,0)
 
-mass_end = datetime.time(13,00,0)
+mass_end = datetime.time(20,00,0)
 
 
 
