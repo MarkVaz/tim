@@ -1,0 +1,5 @@
+streamlit
+pandas
+google.oauth2
+gspread_pandas
+datetime
