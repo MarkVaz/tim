@@ -108,9 +108,9 @@ st.title("Welcome to Tim and Adeline's Wedding Bets!")
 
 time = datetime.datetime.now().time()
 
-crux = datetime.time(22,56,0)
+crux = datetime.time(11,56,0)
 
-mass_end = datetime.time(23,00,0)
+mass_end = datetime.time(13,00,0)
 
 if 'time' not in st.session_state:
     st.session_state.time = time
