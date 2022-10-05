@@ -7,6 +7,16 @@ import datetime
 from google.oauth2 import service_account
 from gspread_pandas import Spread,Client
 
+#Streamlit page configurations
+st.set_page_config(page_title = 'Tim & Adeline', page_icon=":ring:")
+
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility:hidden; }
+        footer {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html= True)
 #Google credential scripts
 
 #Create a google authenitfication connection object
@@ -150,7 +160,7 @@ if time < crux:
     bet6_answer = st.selectbox('Answer #6',y_n_answers)
 
     st.subheader('Bet #7')
-    st.text('Will thge Gospel be from Matthew, Mark, Luke, or John?')
+    st.text('Will the Gospel be from Matthew, Mark, Luke, or John?')
     bet7_answer = st.selectbox('Answer #7',gospel_answers)
 
     st.subheader('Bet #8')
@@ -168,6 +178,8 @@ if time < crux:
     st.text('')
     st.text('Happy with your bets? Hit submit!')
     st.text("Don't leave the page until it says 'Entry Added'")
+
+    
     
     
     submit = st.button('Submit')
@@ -192,7 +204,7 @@ if time < crux:
         new_df = df.append(submit_df,ignore_index=True)
         update_the_spreadsheet('tims_bets',new_df)
 
-        st.subheader('Entry Added!')
+        st.success('Entry Added!')
         
 
 
@@ -209,7 +221,7 @@ elif time > crux and time < mass_end:
     st.markdown('https://youtube.com/channel/UCedrWgfNmAzEwN0Knv2zVNg',unsafe_allow_html= True)
 
 else:
-    st.subheader('The Wedding is over congratulations to the Tim and Adeline!')
+    st.subheader('The Wedding is over congratulations to Tim and Adeline!')
     st.subheader('On another note! Here are the bet results!')
 
     st.title('Results!')
@@ -246,4 +258,5 @@ else:
             if st.session_state.name in  list_of_names:
                 st.subheader('Score: ' + str(scored_df.loc[scored_df['Participant'] == st.session_state.name, 'score'].iloc[0]))
             else:
-                st.subheader('That name was not found, try again!')
+                st.error('That name was not found, try again!', icon="🚨" )
+                
