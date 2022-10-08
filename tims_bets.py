@@ -52,7 +52,7 @@ def score_df(df):
     for index, row in df.iterrows():
         score = 0
         #TBA
-        if row['bet_1'] == 'Yes':
+        if row['bet_1'] == 'No':
             score += 1
         #TBA
         if row['bet_2'] == 'Yes':
@@ -64,7 +64,7 @@ def score_df(df):
         if row['bet_4'] == 'Yes':
             score += 1
         #TBA
-        if row['bet_5'] == 'Yes':
+        if row['bet_5'] == 'No':
             score += 1
         #ANSWERED
         if row['bet_6'] == 'No':
@@ -79,7 +79,7 @@ def score_df(df):
         if row['bet_9'] == 'Yes':
             score += 1
         #TBA
-        if row['bet_10'] == 'Over':
+        if row['bet_10'] == 'No':
             score += 1
         score_list.append(score)
 
