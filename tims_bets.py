@@ -79,7 +79,7 @@ def score_df(df):
         if row['bet_9'] == 'Yes':
             score += 1
         #TBA
-        if row['bet_10'] == 'No':
+        if row['bet_10'] == 'Over':
             score += 1
         score_list.append(score)
 
